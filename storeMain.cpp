@@ -1,14 +1,17 @@
+/****************************************************************
+* Author: Joseph Shih
+* Description: this is the test file for store class
+* Initialize a store with 1 premium customer and 1 regular customer.
+* Premiun customer enjoys discount on shipping.
+****************************************************************/
 #include "Store.hpp"
 #include <iostream>
 using namespace std;
 
 int main(){
 
-
-
 	cout << "..........Store Class testing........." << endl;
 	Store summerMarket;
-
 
 	Product p1("A01", "Ronaldo", "Lengedary Striker", 99.99, 1);
 	cout << "Ronaldo....initialized" << endl;
@@ -34,32 +37,6 @@ int main(){
 
 	cout << "adding RM and MU to store......." << endl;
 	cout << "adding Isco and CR7 to store...." << endl;
-
-	/*
-	cout << "getProductFromID(str)...........";
-	if(summerMarket.getProductFromID("A02")->getTitle() == "Isco") cout << "ok." << endl;
-	else cout << "ERROR!!" << endl;
-
-	cout << "getMemberFromID(str)............";
-	if(!summerMarket.getMemberFromID("C02")->isPremiumMember()) cout << "ok." << endl;
-	else cout << "ERROR!!" << endl;
-
-	cout << "productSearch(str)............" << endl;
-	summerMarket.productSearch("Striker");
-
-	cout << "adding CR7 to R.Madrid Cart.....";
-	summerMarket.addProductToMemberCart("A01", "C01");
-	cout << "done." << endl;
-
-	cout << "adding Neymar to R.Madrid Cart....,";
-	summerMarket.addProductToMemberCart("A03", "C01");
-	cout << "....should not exist............."<< endl;
-	cout << endl;
-
-	cout << "adding CR7 to Newcastle Cart.....";
-	summerMarket.addProductToMemberCart("A01", "C03");
-	cout << "....should not exist............."<< endl;
-	*/
 
 	Product p3("A03", "Bale", "Worldclass Winger", 89.99, 1);
 	cout << "Bale.......initialized" << endl;
@@ -100,17 +77,16 @@ int main(){
 	summerMarket.addProductToMemberCart("A03", "C01");
 	summerMarket.addProductToMemberCart("A04", "C01");
 	
-
 	cout << "productSearch method...." << endl;
 	cout << "Search for midfielder..." << endl;
 	cout << "should print out Isco, Pogba and Mata" << endl;
 	summerMarket.productSearch("midfielder");
 
+	cout << endl;
 	cout << "Search for GK..........." << endl;
 	summerMarket.productSearch("GK");
 
 	cout << endl;
-
 
 	cout << "addProductToMemberCart.." << endl;
 	cout << "adding non-exist product" << endl;
@@ -135,9 +111,10 @@ int main(){
 	summerMarket.checkOutMember("C01");
 
 
-	//Check out with empty Cart
+	//Check out with empty Cart.
 	summerMarket.checkOutMember("C02");
 
+	//Check out a customer who does not exist
 	summerMarket.checkOutMember("C03");
 	return 0;
 }
